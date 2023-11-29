@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddqnk3bfihxjd"]
+
+[ext_resource type="Shader" path="res://test_feedback.gdshader" id="1_4g3at"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_bgngk"]
+viewport_path = NodePath("SubViewport2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x26b2"]
+resource_local_to_scene = true
+shader = ExtResource("1_4g3at")
+shader_parameter/current_texture = SubResource("ViewportTexture_bgngk")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ynhsy"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_g2sda"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="SubViewport" type="SubViewport" parent="."]
+render_target_clear_mode = 2
+render_target_update_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="SubViewport"]
+material = SubResource("ShaderMaterial_x26b2")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport2" type="SubViewport" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewport2"]
+texture = SubResource("ViewportTexture_ynhsy")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("ViewportTexture_g2sda")
+centered = false
