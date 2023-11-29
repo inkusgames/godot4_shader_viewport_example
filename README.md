@@ -1,6 +1,6 @@
-# Godot4.13 Shader Viewport Example
+# Godot4.1.3 Shader Viewport Example
 
-This is a the most basic project I can make the demonstrates the 'correct' way to use Viewports as source images for shaders that write back into the viewports.
+This is a basic project to demonstrates the 'correct' way to use Viewports as source images for shaders that write back into the viewports.
 
 ## The wrong way
 
